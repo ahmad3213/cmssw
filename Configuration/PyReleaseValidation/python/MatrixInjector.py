@@ -449,7 +449,16 @@ class MatrixInjector(object):
                         for (om,o) in t_input['nowmIO'].items():
                             if primary in o:
                                 #print "found",primary,"procuced by",om,"of",t_input['TaskName']
-                                t_second['InputTask'] = t_input['TaskName']
+                                if (len(t_input['TaskName'])>50):
+                                    t_input['TaskName'] = t_input['TaskName'].replace('2018_GenSimFull','18GS')
+                                    if (len(t_input['TaskName'])>50):
+                                        t_input['TaskName'] = t_input['TaskName'].replace('_TuneCUETP8M1','CUETP8M1')
+                                        t_input['TaskName'] = t_input['TaskName'].replace('pythia8','')
+                                        if (t_input['TaskName'].startswith('RSGravitonToGammaGamma')):
+                                            t_input['TaskName'] = t_input['TaskName'].replace('RSGravitonToGammaGamma','RSGravitonToGG')
+                                        if (t_input['TaskName'].startswith('DisplacedSUSY_stopToBottom')):
+                                             t_input['TaskName'] = t_input['TaskName'].replace('DisplacedSUSY_stopToBottom_M_300_1000mm','DispSUSYstopToBottomM300_1000mm')
+                                t_second['InputTask'] = t_input['TaskName'] 
                                 t_second['InputFromOutputModule'] = om
                                 #print 't_second',pprint.pformat(t_second)
                                 if t_second['TaskName'].startswith('HARVEST'):
@@ -548,6 +557,15 @@ class MatrixInjector(object):
             for it in d:
                 if it.startswith("Task") and it!='TaskChain':
                     #upload
+                    if (len(d[it]['TaskName'])>50):
+                        d[it]['TaskName'] = d[it]['TaskName'].replace('2018_GenSimFull','18GS')
+                        if (len(d[it]['TaskName'])>50):
+                            d[it]['TaskName'] = d[it]['TaskName'].replace('_TuneCUETP8M1','CUETP8M1')
+                            d[it]['TaskName'] = d[it]['TaskName'].replace('pythia8','')
+                            if (d[it]['TaskName'].startswith('RSGravitonToGammaGamma')):
+                                d[it]['TaskName'] = d[it]['TaskName'].replace('RSGravitonToGammaGamma','RSGravitonToGG')
+                            if (d[it]['TaskName'].startswith('DisplacedSUSY_stopToBottom')):
+                                d[it]['TaskName'] = d[it]['TaskName'].replace('DisplacedSUSY_stopToBottom_M_300_1000mm','DispSUSYstopToBottomM300_1000mm')
                     couchID=self.uploadConf(d[it]['ConfigCacheID'],
                                             str(n)+d[it]['TaskName'],
                                             d['ConfigCacheUrl']
