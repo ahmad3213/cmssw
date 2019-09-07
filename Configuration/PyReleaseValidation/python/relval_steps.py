@@ -630,8 +630,10 @@ baseDataSetRelease=[
     'CMSSW_10_6_0-PU25ns_106X_mc2017_realistic_v3-v1',     # 14 - fullSim PU 25ns UP17 premix library
     'CMSSW_10_6_0-106X_mc2017_realistic_v3_FastSim-v1',    # 15 - fastSim MinBias for mixing UP17
     'CMSSW_10_6_0-PU25ns_106X_mc2017_realistic_v3_FastSim-v1',# 16 - fastSim premix library UP17 
-    'CMSSW_10_6_0-PU25ns_106X_upgrade2018_realistic_v4-v1',  # 17 - fullSim PU 25ns UP18 premix library
-    'CMSSW_10_6_0-106X_upgrade2018_realistic_v4-v1',  # 18 - GENSIM input for 2018 fullSim premix workflows
+#    'CMSSW_10_6_0-PU25ns_106X_upgrade2018_realistic_v4-v1',  # 17 - fullSim PU 25ns UP18 premix library
+    'CMSSW_11_0_0_pre6-PU25ns_110X_upgrade2018_realistic_v3-v1',
+#    'CMSSW_10_6_0-106X_upgrade2018_realistic_v4-v1',  # 18 - GENSIM input for 2018 fullSim premix workflows
+    'CMSSW_11_0_0_pre4-106X_upgrade2018_realistic_v6-v1',
     'CMSSW_10_6_0-106X_upgrade2018_realistic_v4_FastSim-v1',    # 19 - fastSim MinBias for mixing UP18
     'CMSSW_10_6_0-PU25ns_106X_upgrade2018_realistic_v4_FastSim-v1',# 20 - fastSim premix library UP18 
     'CMSSW_10_6_0-106X_mc2017_realistic_v3-v1',		# 21 - GEN-SIM inputs for LHE-GEN-SIM 2017 workflows
@@ -1493,8 +1495,7 @@ steps['BsToMuMu_forSTEAM_13TeV_TuneCUETP8M1']=genvalid('BsToMuMu_forSTEAM_13TeV_
 
 
 # sometimes v1 won't be used - override it here - the dictionary key is gen fragment + '_' + geometry
-overrideFragments={'H125GGgluonfusion_13UP18INPUT':'2'}
-
+overrideFragments={'QQH1352T_13UP18INPUT':'2','SMS-T1tttt_mGl-1500_mLSP-100_13UP18INPUT':'2'}
 import re
 for key in overrideFragments:
     for inI in steps[key]:
@@ -3011,8 +3012,10 @@ from  Configuration.PyReleaseValidation.upgradeWorkflowComponents import *
 # imported from above, only non-empty values should be provided here
 defaultDataSets['2017']='CMSSW_10_6_0-106X_mc2017_realistic_v3-v'
 defaultDataSets['2017Design']='CMSSW_10_0_0_pre2-100X_mc2017_design_IdealBS_v1-v'
-defaultDataSets['2018']='CMSSW_10_6_0-106X_upgrade2018_realistic_v4-v'
-defaultDataSets['2018Design']='CMSSW_10_6_0-106X_upgrade2018_design_v3-v'
+#defaultDataSets['2018']='CMSSW_10_6_0-106X_upgrade2018_realistic_v4-v'
+defaultDataSets['2018']='CMSSW_11_0_0_pre4-106X_upgrade2018_realistic_v6-v'
+#defaultDataSets['2018Design']='CMSSW_10_6_0-106X_upgrade2018_design_v3-v'
+defaultDataSets['2018Design']='CMSSW_11_0_0_pre4-106X_upgrade2018_design_v5-v'
 defaultDataSets['2021']='CMSSW_10_6_1-106X_mcRun3_2021_realistic_v1_rsb-v'
 defaultDataSets['2021Design']='CMSSW_10_6_0_pre3-105X_postLS2_realistic_v6-v'
 defaultDataSets['2023']='CMSSW_10_6_1-106X_mcRun3_2021_realistic_v1_rsb-v'
@@ -3025,8 +3028,7 @@ for key in keys:
   defaultDataSets[key+'PU']=defaultDataSets[key]
 
 # sometimes v1 won't be used - override it here - the dictionary key is gen fragment + '_' + geometry
-versionOverrides={'BuMixing_BMuonFilter_forSTEAM_13TeV_TuneCUETP8M1_2017':'2','HSCPstop_M_200_TuneCUETP8M1_13TeV_pythia8_2017':'2','RSGravitonToGammaGamma_kMpl01_M_3000_TuneCUETP8M1_13TeV_pythia8_2017':'2','WprimeToENu_M-2000_TuneCUETP8M1_13TeV-pythia8_2017':'2','DisplacedSUSY_stopToBottom_M_300_1000mm_TuneCUETP8M1_13TeV_pythia8_2017':'2','TenE_E_0_200_pythia8_2017':'2','TenE_E_0_200_pythia8_2017PU':'2', 'TenTau_E_15_500_pythia8_2018':'2','PhotonJet_Pt_10_13TeV_TuneCUETP8M1_2018':'2','Wjet_Pt_80_120_13TeV_TuneCUETP8M1_2018':'2'}
-
+versionOverrides={'BuMixing_BMuonFilter_forSTEAM_13TeV_TuneCUETP8M1_2017':'2','HSCPstop_M_200_TuneCUETP8M1_13TeV_pythia8_2017':'2','RSGravitonToGammaGamma_kMpl01_M_3000_TuneCUETP8M1_13TeV_pythia8_2017':'2','WprimeToENu_M-2000_TuneCUETP8M1_13TeV-pythia8_2017':'2','DisplacedSUSY_stopToBottom_M_300_1000mm_TuneCUETP8M1_13TeV_pythia8_2017':'2','TenE_E_0_200_pythia8_2017':'2','TenE_E_0_200_pythia8_2017PU':'2','PhotonJet_Pt_10_13TeV_TuneCUETP8M1_2018':'2','Wjet_Pt_80_120_13TeV_TuneCUETP8M1_2018':'2','ZpTT_1500_13TeV_TuneCUETP8M1_2018PU':'2','TenTau_E_15_500_pythia8_2018':'2','TenTau_E_15_500_pythia8_2018PU':'2','QQH1352T_13TeV_TuneCUETP8M1_2018PU':'2','SMS-T1tttt_mGl-1500_mLSP-100_13TeV-pythia8_2018PU':'2','QCDForPF_13TeV_TuneCUETP8M1_2018PU':'2','SMS-T1tttt_mGl-1500_mLSP-100_13TeV-pythia8_2018':'2','ZpTT_1500_13TeV_TuneCUETP8M1_2018':'2','QCD_Pt_600_800_13TeV_TuneCUETP8M1_2018':'2','QQH1352T_13TeV_TuneCUETP8M1_2018':'2','Wjet_Pt_3000_3500_13TeV_TuneCUETP8M1_2018':'2','QCDForPF_13TeV_TuneCUETP8M1_2018':'2','RSKKGluon_m3000GeV_13TeV_TuneCUETP8M1_2018':'2','ZpMM_2250_13TeV_TuneCUETP8M1_2018':'2','ZpEE_2250_13TeV_TuneCUETP8M1_2018':'2','PYTHIA8_PhiToMuMu_TuneCUETP8M1_13TeV_2018':'2'}
 baseDataSetReleaseBetter={}
 for gen in upgradeFragments:
     for ds in defaultDataSets:
