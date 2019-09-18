@@ -2515,6 +2515,21 @@ steps['HARVESTUP15']={
     '--era' : 'Run2_2016',
     '--filetype':'DQM',
     }
+steps['NANOUP15']={'--mc':'',
+                   '-s':'NANO',
+                   '--nThreads':'2',
+                   '--era':'Run2_2016,run2_nanoAOD_94X2016',
+                   '--conditions':'auto:run2_mc',
+                   '--datatier':'NANOAODSIM',
+                   '-n':'10',
+                   '--eventcontent':'NANOEDMAODSIM',
+                   '--filein':'file:step3_inMINIAODSIM.root',
+                   '--fileout':'file:step5.root',
+}
+
+#cmsDriver.py step1 --mc --eventcontent NANOEDMAODSIM --datatier NANOAODSIM --conditions gt --step NANO --nThreads 2 --era Run2_2016,run2_nanoAOD_94X2016  --filein file:step-1.root --fileout file:step0.root
+
+
 steps['HARVESTUP15_L1TEgDQM']=merge([{'-s':'HARVESTING:@standardValidation+@standardDQM+@ExtraHLT+@miniAODValidation+@miniAODDQM+@L1TEgamma'},steps['HARVESTUP15']])
 steps['HARVESTUP15_L1TMuDQM']=merge([{'-s':'HARVESTING:@standardValidation+@standardDQM+@ExtraHLT+@miniAODValidation+@miniAODDQM+@L1TMuon'},steps['HARVESTUP15']])
 
