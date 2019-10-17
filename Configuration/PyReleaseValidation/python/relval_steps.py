@@ -404,7 +404,7 @@ steps['RunMET2018A']={'INPUT':InputInfo(dataSet='/MET/Run2018A-v1/RAW',label='20
 #steps['RunMuonEG2018A']={'INPUT':InputInfo(dataSet='/MuonEG/Run2018A-v1/RAW',label='2018A',events=100000,location='STD', ls=Run2018A)}
 steps['RunMuonEG2018A']={'INPUT':InputInfo(dataSet='/MuonEG/Run2018A-17Sep2018-v1/MINIAOD',label='2018A',events=100000,location='STD', ls=Run2018A)}
 #steps['RunSingleMu2018A']={'INPUT':InputInfo(dataSet='/SingleMuon/Run2018A-v1/RAW',label='2018A',events=100000,location='STD', ls=Run2018A)}
-steps['RunSingleMu2018A']={'INPUT':InputInfo(dataSet='/SingleMuon/Run2018A-17Sep2018-v1/MINIAOD',label='2018A',events=100000,location='STD', ls=Run2018A)}
+steps['RunSingleMu2018A']={'INPUT':InputInfo(dataSet='/SingleMuon/Run2018A-17Sep2018-v2/MINIAOD',label='2018A',events=100000,location='STD', ls=Run2018A)}
 steps['RunZeroBias2018A']={'INPUT':InputInfo(dataSet='/ZeroBias/Run2018A-v1/RAW',label='2018A',events=100000,location='STD', ls=Run2018A)}
 steps['RunMuOnia2018A']={'INPUT':InputInfo(dataSet='/MuOnia/Run2018A-v1/RAW',label='2018A',events=100000,location='STD', ls=Run2018A)}
 steps['RunNoBPTX2018A']={'INPUT':InputInfo(dataSet='/NoBPTX/Run2018A-v1/RAW',label='2018A',events=100000,location='STD', ls=Run2018A)}
