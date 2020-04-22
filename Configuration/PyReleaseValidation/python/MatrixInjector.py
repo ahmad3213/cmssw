@@ -279,6 +279,7 @@ class MatrixInjector(object):
             wmsplit['HYBRIDZSHI2015']=1
             wmsplit['RECOHID15']=1
             wmsplit['RECOHID18']=1
+            wmsplit['RECO2026D49PU200']=1
             wmsplit['DigiFullTriggerPU_2026D35PU'] = 1
             wmsplit['RecoFullGlobalPU_2026D35PU']=1
             wmsplit['DigiFullTriggerPU_2026D41PU'] = 1
@@ -474,10 +475,10 @@ class MatrixInjector(object):
 
                         index+=1
                     #end of loop through steps
-                    chainDict['RequestString']='RV'+chainDict['CMSSWVersion']+s[1].split('+')[0]
+                    chainDict['RequestString']='RV'+chainDict['CMSSWVersion']+s[1].split('+')[0].split('_')[0]
                     if processStrPrefix or thisLabel:
-                        chainDict['RequestString']+='_'+processStrPrefix+thisLabel
-
+                        #chainDict['RequestString']+='_'+processStrPrefix+thisLabel
+                        chainDict['RequestString']+='_'+thisLabel
 ### PrepID
                     chainDict['PrepID'] = chainDict['CMSSWVersion']+'__'+self.batchTime+'-'+s[1].split('+')[0]
                     if(self.batchName):

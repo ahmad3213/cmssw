@@ -659,6 +659,8 @@ baseDataSetRelease=[
     'CMSSW_10_6_0-PU25ns_106X_upgrade2018_realistic_v4_FastSim-v1',# 20 - fastSim premix library UP18 
     'CMSSW_10_6_0-106X_mc2017_realistic_v3-v1',         # 21 - GEN-SIM inputs for LHE-GEN-SIM 2017 workflows
     'CMSSW_10_6_0-106X_upgrade2018_realistic_v4-v1',            # 22 - GEN-SIM inputs for LHE-GEN-SIM 2018 workflows
+    'CMSSW_11_0_0-110X_mcRun4_realistic_v2_2026D49noPU-v1',	# 23 - RAW inputs for Phase2 noPU 2026D49
+    'CMSSW_11_0_0-PU25ns_110X_mcRun4_realistic_v3_2026D49PU200-v1', 	# 24 - RAW inputs for Phase2 highPU 2026D49
     'CMSSW_11_1_0_pre5-111X_mcRun3_2021_realistic_HI_v3-v1',    #23 - Run3 HI GEN-SIM for mixing
     'CMSSW_11_1_0_pre2-PU25ns_111X_upgrade2018_realistic_RunDep_premix_v1-v1', # 24 - 2018 Run-Dependent premix library
     ]
@@ -804,7 +806,82 @@ steps['SMS-T1tttt_mGl-1500_mLSP-100_13UP18INPUT']={'INPUT':InputInfo(dataSet='/R
 #input for 13 TeV High Stats samples
 steps['ZMM_13_HSINPUT']={'INPUT':InputInfo(dataSet='/RelValZMM_13_HS/%s/GEN-SIM'%(baseDataSetRelease[10],),location='STD')}
 steps['TTbar_13_HSINPUT']={'INPUT':InputInfo(dataSet='/RelValTTbar_13_HS/%s/GEN-SIM'%(baseDataSetRelease[10],),location='STD')}
-
+#input for Phase2 2026D49noPU RAW in 11_0_0
+steps['TTbar_2026D49noPU']={'INPUT':InputInfo(dataSet='/RelValTTbar_14TeV/CMSSW_11_0_0-110X_mcRun4_realistic_v2_2026D49noPU-v2/GEN-SIM-DIGI-RAW',location='STD')}
+steps['NuGun_2026D49noPU']={'INPUT':InputInfo(dataSet='/RelValNuGun/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[23],),location='STD')}
+steps['ZTT_2026D49noPU']={'INPUT':InputInfo(dataSet='/RelValZTT_14TeV/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[23],),location='STD')}
+steps['H125GGgluonfusion_2026D49noPU']={'INPUT':InputInfo(dataSet='/RelValH125GGgluonfusion_14/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[23],),location='STD')}
+steps['ZMM_2026D49noPU']={'INPUT':InputInfo(dataSet='/RelValZMM_14/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[23],),location='STD')}
+steps['ZEE_2026D49noPU']={'INPUT':InputInfo(dataSet='/RelValZEE_14/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[23],),location='STD')}
+steps['QCD_Pt15To7000_2026D49noPU']={'INPUT':InputInfo(dataSet='/RelValQCD_Pt15To7000_Flat_14TeV/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[23],),location='STD')}
+steps['ZpTT_1500_2026D49noPU']={'INPUT':InputInfo(dataSet='/RelValZpTT_1500_14TeV/CMSSW_11_0_0-110X_mcRun4_realistic_v3_2026D49noPU-v1/GEN-SIM-DIGI-RAW',location='STD')}
+steps['TenTau_15_500_2026D49noPU']={'INPUT':InputInfo(dataSet='/RelValTenTau_15_500/CMSSW_11_0_0-110X_mcRun4_realistic_v3_2026D49noPU-v1/GEN-SIM-DIGI-RAW',location='STD')}
+steps['SingleElFlatPt2To100_2026D49noPU']={'INPUT':InputInfo(dataSet='/RelValSingleEFlatPt2To100/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[23],),location='STD')}
+steps['SingleMuFlatPt2To100_2026D49noPU']={'INPUT':InputInfo(dataSet='/RelValSingleMuFlatPt2To100/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[23],),location='STD')}
+steps['SingleMuFlatPt0p7To10_2026D49noPU']={'INPUT':InputInfo(dataSet='/RelValSingleMuFlatPt0p7To10/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[23],),location='STD')}
+steps['SingleGFlatPt8To150_2026D49noPU']={'INPUT':InputInfo(dataSet='/RelValSingleGammaFlatPt8To150/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[23],),location='STD')}
+steps['SingleTauFlatPt2To150_2026D49noPU']={'INPUT':InputInfo(dataSet='/RelValSingleTauFlatPt2To150/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[23],),location='STD')}
+steps['SinglePiFlatPt0p7To10_2026D49noPU']={'INPUT':InputInfo(dataSet='/RelValSinglePiFlatPt0p7To10/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[23],),location='STD')}
+steps['DisplacedMuPt2To10_2026D49noPU']={'INPUT':InputInfo(dataSet='/RelValDisplacedMuPt2To10/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[23],),location='STD')}
+steps['DisplacedMuPt10To30_2026D49noPU']={'INPUT':InputInfo(dataSet='/RelValDisplacedMuPt10To30/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[23],),location='STD')}
+steps['DisplacedMuPt30To100_2026D49noPU']={'INPUT':InputInfo(dataSet='/RelValDisplacedMuPt30To100/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[23],),location='STD')}
+steps['SingleMuPt10_2026D49noPU']={'INPUT':InputInfo(dataSet='/RelValSingleMuPt10/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[23],),location='STD')}
+steps['SingleMuPt100_2026D49noPU']={'INPUT':InputInfo(dataSet='/RelValSingleMuPt100/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[23],),location='STD')}
+steps['SingleMuPt1000_2026D49noPU']={'INPUT':InputInfo(dataSet='/RelValSingleMuPt1000/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[23],),location='STD')}
+steps['QCD_Pt20toInfMuEnrichPt15_2026D49noPU']={'INPUT':InputInfo(dataSet='/RelValQCD_Pt20toInfMuEnrichPt15_14TeV/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[23],),location='STD')}
+steps['TauToMuMuMu_2026D49noPU']={'INPUT':InputInfo(dataSet='/RelValTauToMuMuMu_14TeV/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[23],),location='STD')}
+steps['BsToMuMu_2026D49noPU']={'INPUT':InputInfo(dataSet='/RelValBsToMuMu_14TeV/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[23],),location='STD')}
+steps['BsToEleEle_2026D49noPU']={'INPUT':InputInfo(dataSet='/RelValBsToEleEle_14TeV/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[23],),location='STD')}
+steps['BsToPhiPhi_KKKK_2026D49noPU']={'INPUT':InputInfo(dataSet='/RelValBsToPhiPhi_KKKK_14TeV/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[23],),location='STD')}
+steps['BsToJpsiPhi_mumuKK_2026D49noPU']={'INPUT':InputInfo(dataSet='/RelValBsToJpsiPhi_mumuKK_14TeV/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[23],),location='STD')}
+steps['BsToJpsiGamma_2026D49noPU']={'INPUT':InputInfo(dataSet='/RelValBsToJpsiGamma_14TeV/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[23],),location='STD')}
+steps['B0ToKstarMuMu_2026D49noPU']={'INPUT':InputInfo(dataSet='/RelValB0ToKstarMuMu_14TeV/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[23],),location='STD')}
+steps['CloseByPGun_CE_E_Front_300um_2026D49noPU']={'INPUT':InputInfo(dataSet='/RelValCloseByParticleGun_CE_E_Front_300um/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[23],),location='STD')}
+steps['CloseByPGun_CE_E_Front_200um_2026D49noPU']={'INPUT':InputInfo(dataSet='/RelValCloseByParticleGun_CE_E_Front_200um/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[23],),location='STD')}
+steps['CloseByPGun_CE_E_Front_120um_2026D49noPU']={'INPUT':InputInfo(dataSet='/RelValCloseByParticleGun_CE_E_Front_120um/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[23],),location='STD')}
+steps['CloseByPGun_CE_H_Fine_300um_2026D49noPU']={'INPUT':InputInfo(dataSet='/RelValCloseByParticleGun_CE_H_Fine_300um/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[23],),location='STD')}
+steps['CloseByPGun_CE_H_Fine_200um_2026D49noPU']={'INPUT':InputInfo(dataSet='/RelValCloseByParticleGun_CE_H_Fine_200um/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[23],),location='STD')}
+steps['CloseByPGun_CE_H_Fine_120um_2026D49noPU']={'INPUT':InputInfo(dataSet='/RelValCloseByParticleGun_CE_H_Fine_120um/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[23],),location='STD')}
+steps['CloseByPGun_CE_H_Coarse_Scint_2026D49noPU']={'INPUT':InputInfo(dataSet='/RelValCloseByParticleGun_CE_H_Coarse_Scint/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[23],),location='STD')}
+steps['CloseByPGun_CE_H_Coarse_300um_2026D49noPU']={'INPUT':InputInfo(dataSet='/RelValCloseByParticleGun_CE_H_Coarse_300um/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[23],),location='STD')}
+#input for Phase2 2026D49PU200 RAW in 11_0_0
+steps['TTbar_2026D49PU200']={'INPUT':InputInfo(dataSet='/RelValTTbar_14TeV/CMSSW_11_0_0-PU25ns_110X_mcRun4_realistic_v3_2026D49PU200-v2/GEN-SIM-DIGI-RAW',location='STD')}
+steps['NuGun_2026D49PU200']={'INPUT':InputInfo(dataSet='/RelValNuGun/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[24],),location='STD')}
+steps['ZTT_2026D49PU200']={'INPUT':InputInfo(dataSet='/RelValZTT_14TeV/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[24],),location='STD')}
+steps['H125GGgluonfusion_2026D49PU200']={'INPUT':InputInfo(dataSet='/RelValH125GGgluonfusion_14/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[24],),location='STD')}
+steps['ZMM_2026D49PU200']={'INPUT':InputInfo(dataSet='/RelValZMM_14/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[24],),location='STD')}
+steps['ZEE_2026D49PU200']={'INPUT':InputInfo(dataSet='/RelValZEE_14/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[24],),location='STD')}
+steps['QCD_Pt15To7000_2026D49PU200']={'INPUT':InputInfo(dataSet='/RelValQCD_Pt15To7000_Flat_14TeV/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[24],),location='STD')}
+steps['ZpTT_1500_2026D49PU200']={'INPUT':InputInfo(dataSet='/RelValZpTT_1500_14TeV/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[24],),location='STD')}
+steps['TenTau_15_500_2026D49PU200']={'INPUT':InputInfo(dataSet='/RelValTenTau_15_500/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[24],),location='STD')}
+steps['SingleElFlatPt2To100_2026D49PU200']={'INPUT':InputInfo(dataSet='/RelValSingleEFlatPt2To100/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[24],),location='STD')}
+steps['SingleMuFlatPt2To100_2026D49PU200']={'INPUT':InputInfo(dataSet='/RelValSingleMuFlatPt2To100/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[24],),location='STD')}
+steps['SingleMuFlatPt0p7To10_2026D49PU200']={'INPUT':InputInfo(dataSet='/RelValSingleMuFlatPt0p7To10/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[24],),location='STD')}
+steps['SingleGFlatPt8To150_2026D49PU200']={'INPUT':InputInfo(dataSet='/RelValSingleGammaFlatPt8To150/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[24],),location='STD')}
+steps['SingleTauFlatPt2To150_2026D49PU200']={'INPUT':InputInfo(dataSet='/RelValSingleTauFlatPt2To150/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[24],),location='STD')}
+steps['SinglePiFlatPt0p7To10_2026D49PU200']={'INPUT':InputInfo(dataSet='/RelValSinglePiFlatPt0p7To10/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[24],),location='STD')}
+steps['DisplacedMuPt2To10_2026D49PU200']={'INPUT':InputInfo(dataSet='/RelValDisplacedMuPt2To10/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[24],),location='STD')}
+steps['DisplacedMuPt10To30_2026D49PU200']={'INPUT':InputInfo(dataSet='/RelValDisplacedMuPt10To30/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[24],),location='STD')}
+steps['DisplacedMuPt30To100_2026D49PU200']={'INPUT':InputInfo(dataSet='/RelValDisplacedMuPt30To100/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[24],),location='STD')}
+steps['SingleMuPt10_2026D49PU200']={'INPUT':InputInfo(dataSet='/RelValSingleMuPt10/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[24],),location='STD')}
+steps['SingleMuPt100_2026D49PU200']={'INPUT':InputInfo(dataSet='/RelValSingleMuPt100/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[24],),location='STD')}
+steps['SingleMuPt1000_2026D49PU200']={'INPUT':InputInfo(dataSet='/RelValSingleMuPt1000/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[24],),location='STD')}
+steps['QCD_Pt20toInfMuEnrichPt15_2026D49PU200']={'INPUT':InputInfo(dataSet='/RelValQCD_Pt20toInfMuEnrichPt15_14TeV/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[24],),location='STD')}
+steps['TauToMuMuMu_2026D49PU200']={'INPUT':InputInfo(dataSet='/RelValTauToMuMuMu_14TeV/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[24],),location='STD')}
+steps['BsToMuMu_2026D49PU200']={'INPUT':InputInfo(dataSet='/RelValBsToMuMu_14TeV/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[24],),location='STD')}
+steps['BsToEleEle_2026D49PU200']={'INPUT':InputInfo(dataSet='/RelValBsToEleEle_14TeV/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[24],),location='STD')}
+steps['BsToPhiPhi_KKKK_2026D49PU200']={'INPUT':InputInfo(dataSet='/RelValBsToPhiPhi_KKKK_14TeV/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[24],),location='STD')}
+steps['BsToJpsiPhi_mumuKK_2026D49PU200']={'INPUT':InputInfo(dataSet='/RelValBsToJpsiPhi_mumuKK_14TeV/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[24],),location='STD')}
+steps['BsToJpsiGamma_2026D49PU200']={'INPUT':InputInfo(dataSet='/RelValBsToJpsiGamma_14TeV/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[24],),location='STD')}
+steps['B0ToKstarMuMu_2026D49PU200']={'INPUT':InputInfo(dataSet='/RelValB0ToKstarMuMu_14TeV/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[24],),location='STD')}
+steps['CloseByPGun_CE_E_Front_300um_2026D49PU200']={'INPUT':InputInfo(dataSet='/RelValCloseByParticleGun_CE_E_Front_300um/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[24],),location='STD')}
+steps['CloseByPGun_CE_E_Front_200um_2026D49PU200']={'INPUT':InputInfo(dataSet='/RelValCloseByParticleGun_CE_E_Front_200um/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[24],),location='STD')}
+steps['CloseByPGun_CE_E_Front_120um_2026D49PU200']={'INPUT':InputInfo(dataSet='/RelValCloseByParticleGun_CE_E_Front_120um/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[24],),location='STD')}
+steps['CloseByPGun_CE_H_Fine_300um_2026D49PU200']={'INPUT':InputInfo(dataSet='/RelValCloseByParticleGun_CE_H_Fine_300um/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[24],),location='STD')}
+steps['CloseByPGun_CE_H_Fine_200um_2026D49PU200']={'INPUT':InputInfo(dataSet='/RelValCloseByParticleGun_CE_H_Fine_200um/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[24],),location='STD')}
+steps['CloseByPGun_CE_H_Fine_120um_2026D49PU200']={'INPUT':InputInfo(dataSet='/RelValCloseByParticleGun_CE_H_Fine_120um/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[24],),location='STD')}
+steps['CloseByPGun_CE_H_Coarse_Scint_2026D49PU200']={'INPUT':InputInfo(dataSet='/RelValCloseByParticleGun_CE_H_Coarse_Scint/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[24],),location='STD')}
+steps['CloseByPGun_CE_H_Coarse_300um_2026D49PU200']={'INPUT':InputInfo(dataSet='/RelValCloseByParticleGun_CE_H_Coarse_300um/%s/GEN-SIM-DIGI-RAW'%(baseDataSetRelease[24],),location='STD')}
 
 ## high stat step1
 ecalHcal={
@@ -1577,7 +1654,9 @@ PUFS25={'--pileup':'AVE_35_BX_25ns','--pileup_input':'das:/RelValMinBiasFS_13_Fo
 
 #pu25 for high stats workflows
 PU25HS={'-n':10,'--pileup':'AVE_35_BX_25ns','--pileup_input':'das:/RelValMinBias_13/%s/GEN-SIM'%(baseDataSetRelease[11],)}
-
+#PU25 for Phase2 HLT TDR workflows
+PU25_2026D49={'-n':10,'--pileup':'AVE_200_BX_25ns','--pileup_input':'das:/RelValMinBias_14TeV/CMSSW_11_0_0_pre13-110X_mcRun4_realistic_v2_2026D49noPU-v1/GEN-SIM'}
+#PU25_2026D49={'-n':10,'--pileup':'AVE_200_BX_25ns','--pileup_input':'das:/RelValMinBias_14TeV/CMSSW_11_1_0_pre3-110X_mcRun4_realistic_v3_2026D49noPU-v1/GEN-SIM'}
 
 #
 steps['TTbarFSPU']=merge([PUFS,Kby(100,500),steps['TTbarFS']] )
@@ -2377,7 +2456,23 @@ steps['RECOUP15_PU50_L1TMuDQM']=merge([{'-s':'RAW2DIGI,L1Reco,RECO,EI,PAT,VALIDA
 
 # for PU25 High stats workflows
 steps['RECOUP15_PU25HS']=merge([PU25HS,step3Up2015Defaults])
+# for Phase2 HLT TDR
+step3HLTTDR2026D49 = {
+                  '-s'            : 'RAW2DIGI,L1Reco,RECO,RECOSIM,PAT,VALIDATION:@phase2Validation+@miniAODValidation,DQM:@phase2+@miniAODDQM',
+                  '--runUnscheduled':'',
+                  '--conditions'  : 'auto:phase2_realistic_T15',
+                  '--no_exec'     : '',
+                  '--era'         : 'Phase2C9',
+                  '--datatier'    : 'GEN-SIM-RECO,MINIAODSIM,DQMIO',
+                  '--eventcontent': 'FEVTDEBUGHLT,MINIAODSIM,DQM',
+                  '--geometry'    : 'Extended2026D49',
+                  '--customise'   : 'SLHCUpgradeSimulations/Configuration/aging.customise_aging_1000',
+                  '-n'            : '10',
+                  }
 
+steps['RECO2026D49']=merge([step3HLTTDR2026D49])
+steps['RECO2026D49PU200']=merge([PU25_2026D49,step3HLTTDR2026D49])
+#steps['RECO2026D49PU200']=merge([step3HLTTDR2026D49])
 
 # mask away - to be removed once we'll migrate the matrix to be fully unscheduled for RECO step
 #steps['RECOmAOD']=merge([step3DefaultsUnsch])
@@ -2908,6 +3003,22 @@ steps['HARVESTUP17FS']=merge([{'--conditions':'auto:phase1_2017_realistic','--er
 steps['HARVESTUP17FS_trackingOnly']=merge([{'-s': 'HARVESTING:@trackingOnlyValidation+@trackingOnlyDQM'}, steps['HARVESTUP17FS']])
 steps['HARVESTUP18FS']=merge([{'--conditions':'auto:phase1_2018_realistic','--era' : 'Run2_2018_FastSim'},steps['HARVESTUP15FS']])
 steps['HARVESTUP18FS_trackingOnly']=merge([{'-s': 'HARVESTING:@trackingOnlyValidation+@trackingOnlyDQM'}, steps['HARVESTUP18FS']])
+# Harvest step for Phase2 HLT TDR ReReco
+steps['HARVEST2026D49']={
+                        '-s':'HARVESTING:@phase2Validation+@phase2+@miniAODValidation+@miniAODDQM',
+                        '--conditions':'auto:phase2_realistic_T15',
+                        '--era':'Phase2C9',
+                        '--mc':'',
+                        '--geometry':'Extended2026D49',
+                        '--filetype':'DQM',
+                        '--scenario':'pp',
+                        '--customise':'SLHCUpgradeSimulations/Configuration/aging.customise_aging_1000',
+                        '-n':'100'}
+
+steps['HARVEST2026D49PU200']=merge([PU25_2026D49,steps['HARVEST2026D49']])
+#steps['HARVEST2026D49PU200']=steps['HARVEST2026D49']
+
+
 
 steps['ALCASPLIT']={'-s':'ALCAOUTPUT:@allForPrompt',
                     '--conditions':'auto:run1_data',
